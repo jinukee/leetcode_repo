@@ -27,11 +27,14 @@ public class _707_ {
         }
 
         public void addAtTail(int val){
-            if (head == null) addAtHead(val);
+            if(head == null){
+                addAtHead(val);
+            }
             else{
                 Node temp = head;
-                while(temp.next != null)
+                while(temp.next != null){
                     temp = temp.next;
+                }
                 Node newnode = new Node(val);
                 temp.next = newnode;
                 length++;
@@ -39,8 +42,7 @@ public class _707_ {
         }
 
         public void addAtIndex(int index, int val){
-            if (index > length)
-                return;
+            if(index > length) return;
             if(index == 0) addAtHead(val);
             else{
                 int counter = 1;
@@ -58,7 +60,7 @@ public class _707_ {
         }
 
         public void deleteAtIndex(int index){
-            if(index >= length) return;
+            if (index >= length) return;
             if(index == 0){
                 head = head.next;
                 length--;
